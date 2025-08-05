@@ -9,11 +9,9 @@ builder = StateGraph(GlobalState)
 builder.add_edge(START, "amparo")
 builder.add_node("amparo", amparo_node)
 builder.add_node("supervisor", supervisor_node)
-builder.add_node("consultas",retriever_node)
+builder.add_node("consultas", retriever_node)
 
-graph =  builder.compile(checkpointer=checkpointer)
+graph = builder.compile(checkpointer=checkpointer)
 
-
-
-with open("graph.png", "wb") as f:
+with open("assets/graph.png", "wb") as f:
     f.write(graph.get_graph().draw_mermaid_png())
